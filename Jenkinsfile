@@ -13,7 +13,7 @@ node {
 
         stage('Push image') {
             script {
-                docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
+                docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
                     app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
                     app.push("${env.BRANCH_NAME}-latest")
                 }
