@@ -7,7 +7,7 @@ node {
        app = docker.build("dariyozz/jenkins-blueocean")
     }
     stage('Push image') {
-        docker.withRegistry('https://hub.docker.com/repository/docker/dariyozz/jenkins-blueocean/general', 'dockerhub') {
+        docker.withRegistry('https://hub.docker.com/repository/docker/dariyozz/jenkins-blueocean/general', 'docker-hub') {
             app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
             app.push("${env.BRANCH_NAME}-latest")
             // signal the orchestrator that there is a new version
