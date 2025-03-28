@@ -29,6 +29,12 @@ pipeline {
       }
     }
 
+    stage('End ') {
+      steps {
+        echo 'Done'
+      }
+    }
+
   }
   environment {
     DOCKER_CREDENTIALS_ID = 'docker-hub'
